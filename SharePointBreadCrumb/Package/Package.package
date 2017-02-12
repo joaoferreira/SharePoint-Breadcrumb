@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="571e2000-6838-4e1b-8eb8-2558256b0f9a" solutionId="571e2000-6838-4e1b-8eb8-2558256b0f9a" resetWebServer="false" sharePointProductVersion="15.0" name="SharePointBreadCrumb" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="ee7fc6e9-710e-4b9c-9cfd-3481a4ac6cf3" />
+  </features>
+</package>

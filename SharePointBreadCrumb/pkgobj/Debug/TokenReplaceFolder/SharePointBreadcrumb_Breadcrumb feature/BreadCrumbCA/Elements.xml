@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <CustomAction
+    ScriptSrc="~SiteCollection/Style Library/FabricUIBreadcrumb/js/breadcrumb.js"
+    Location="ScriptLink"
+    Sequence="1">
+  </CustomAction>
+</Elements>

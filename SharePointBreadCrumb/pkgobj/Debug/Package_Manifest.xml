@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="571e2000-6838-4e1b-8eb8-2558256b0f9a" SharePointProductVersion="15.0">
+  <FeatureManifests>
+    <FeatureManifest Location="SharePointBreadcrumb_Breadcrumb feature\Feature.xml" />
+  </FeatureManifests>
+</Solution>
