@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     //Get script location to inject the css file
     var scripts = document.getElementsByTagName("script");
     var pathBreadCrumb = "";
-
-    //gets the location of the breadcrumb script to inject the css
     if (scripts && scripts.length > 0) {
         for (var i in scripts) {
             if (scripts[i].src && scripts[i].src.match(/breadcrumb\.js$/)) {
@@ -50,9 +48,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		    //for Seattle Master
 		    if (document.getElementById('contentRow') !== null) {
-		        document.getElementById('DeltaPlaceHolderMain').insertBefore(breadcrumbWrapper, document.getElementById('mainContent'));
+		    	try {
+			    	//old Seattle master
+			        document.getElementById('DeltaPlaceHolderMain').insertBefore(breadcrumbWrapper, document.getElementById('mainContent'));
+		        }catch(err){
+		        	document.getElementById('contentBox').insertBefore(breadcrumbWrapper, document.getElementById('DeltaPlaceHolderMain'));
+		        }
 		    } else {
-                //for Oslo Master
 		        document.getElementById('contentBox').insertBefore(breadcrumbWrapper, document.getElementById('DeltaPlaceHolderMain'));
 		    }
 
