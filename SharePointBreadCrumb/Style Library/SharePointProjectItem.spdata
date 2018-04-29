@@ -5,5 +5,6 @@
     <ProjectItemFile Source="FabricUIBreadcrumb\js\breadcrumb.js" Target="Style Library\FabricUIBreadcrumb\js\" Type="ElementFile" />
     <ProjectItemFile Source="FabricUIBreadcrumb\css\breadcrumb.css" Target="Style Library\FabricUIBreadcrumb\css\" Type="ElementFile" />
     <ProjectItemFile Source="FabricUIBreadcrumb\images\breadcrumb.png" Target="Style Library\FabricUIBreadcrumb\images\" Type="ElementFile" />
+    <ProjectItemFile Source="FabricUIBreadcrumb\js\jquery.min.js" Target="Style Library\FabricUIBreadcrumb\js\" Type="ElementFile" />
   </Files>
 </ProjectItem>

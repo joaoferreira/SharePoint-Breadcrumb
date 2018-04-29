@@ -5,6 +5,7 @@
   </Module>
   <Module Name="StyleLibraryJS" Url="Style Library/FabricUIBreadcrumb/js" RootWebOnly="FALSE" Path="Style Library\FabricUIBreadcrumb\js">
     <File Url="breadcrumb.js" Type="GhostableInLibrary" Level="Published" ReplaceContent="TRUE"  />
+    <File Url="jquery.min.js" Type="GhostableInLibrary" Level="Published" ReplaceContent="TRUE"  />
   </Module>
   <Module Name="StyleLibraryIMAGES" Url="Style Library/FabricUIBreadcrumb/images" RootWebOnly="FALSE" Path="Style Library\FabricUIBreadcrumb\images">
     <File Url="breadcrumb.png" Type="GhostableInLibrary" Level="Published" ReplaceContent="TRUE"  />

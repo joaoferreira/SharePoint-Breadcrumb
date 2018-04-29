@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Title="SharePoint Breadcumb Navigation" Description="This feature gets back the breadcrumb navigation to SharePoint using Fabric UI components.&#xD;&#xA;Breadcrumbs indicate the current page’s location within a hierarchy and help the user understand where they are in relation to the rest of that hierarchy.&#xD;&#xA;They also afford one-click access to higher levels of that hierarchy." Id="c5348012-543b-4d1f-bd61-afeb4ffa9e44" ImageUrl="GenericFeature.gif?breadcrumb.png" Scope="Site">
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Description="This feature gets back the breadcrumb navigation to SharePoint using Fabric UI components.&#xD;&#xA;Breadcrumbs indicate the current page’s location within a hierarchy and help the user understand where they are in relation to the rest of that hierarchy.&#xD;&#xA;They also afford one-click access to higher levels of that hierarchy." Id="c5348012-543b-4d1f-bd61-afeb4ffa9e44" ImageUrl="GenericFeature.gif?breadcrumb.png" Scope="Site" Title="SharePoint Breadcumb Navigation">
   <ElementManifests>
     <ElementManifest Location="BreadCrumbCA\Elements.xml" />
     <ElementManifest Location="Style Library\Elements.xml" />
     <ElementFile Location="Style Library\FabricUIBreadcrumb\js\breadcrumb.js" />
     <ElementFile Location="Style Library\FabricUIBreadcrumb\css\breadcrumb.css" />
     <ElementFile Location="Style Library\FabricUIBreadcrumb\images\breadcrumb.png" />
+    <ElementFile Location="Style Library\FabricUIBreadcrumb\js\jquery.min.js" />
   </ElementManifests>
 </Feature>
