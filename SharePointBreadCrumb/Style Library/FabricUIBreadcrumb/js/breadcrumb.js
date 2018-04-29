@@ -1,9 +1,8 @@
 var breadcrumbProperties = {
     showFolders: true,
-    showListTitle: true,
     breadcrumbElement: "",
     pagesLibrary: "Pages",
-    sitePagesLibrary: "SitePages",
+    sitePagesLibrary: "Site Pages",
     hidePageLibraries: true,
     hideFromPages: [""]
 };
@@ -53,20 +52,15 @@ document.addEventListener("DOMContentLoaded", function () {
         var listTile = _spPageContextInfo.listTitle;
         var listUrl = _spPageContextInfo.listUrl;
 
-        //not supported on SharePoint 2013 on prem
+        //not supported on SharePoint on prem
         if (listTile == undefined) {
-            breadcrumbProperties.showListTitle = false;
             return;
         }
 
-        if (breadcrumbProperties.hidePageLibraries) {
+        if (!breadcrumbProperties.hidePageLibraries) {
             if ((listTile == breadcrumbProperties.sitePagesLibrary) || (listTile == breadcrumbProperties.pagesLibrary)) {
-                return;
-            } else {
-                $('#breadcrumbSite').append('<li class="ms-Breadcrumb-listItem"><a class="ms-Breadcrumb-itemLink" href="' + listUrl + '">' + listTile + '</a><i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i></li>');
+                $('#breadcrumbSite li:last').before('<li class="ms-Breadcrumb-listItem"><a class="ms-Breadcrumb-itemLink" href="' + listUrl + '">' + listTile + '</a><i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i></li>');
             }
-        } else {
-            $('#breadcrumbSite li:last').before('<li class="ms-Breadcrumb-listItem"><a class="ms-Breadcrumb-itemLink" href="' + listUrl + '">' + listTile + '</a><i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i></li>');
         }
     }
 
@@ -83,19 +77,14 @@ document.addEventListener("DOMContentLoaded", function () {
             var libraryNodes = libraryLocation.split('/');
             var libraryNodeURL = _spPageContextInfo.serverRequestPath + "?RootFolder=" + siteServerRelativeUrl;
             $.each(libraryNodes, function (index, value) {
-                if (breadcrumbProperties.showListTitle) {
-                    if (value != "") {
-                        libraryNodeURL = libraryNodeURL + "/" + value;
-                    }
-                    if (index > 1) {
-                        $('#breadcrumbSite').append('<li class="ms-Breadcrumb-listItem"><a class="ms-Breadcrumb-itemLink" href="' + libraryNodeURL + '">' + value + '</a><i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i></li>');
-                    }
-                } else {
-                    if (value != "") {
-                        libraryNodeURL = libraryNodeURL + "/" + value;
-                        $('#breadcrumbSite').append('<li class="ms-Breadcrumb-listItem"><a class="ms-Breadcrumb-itemLink" href="' + libraryNodeURL + '">' + value + '</a><i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i></li>');
-                    }
+
+                if (value != "") {
+                    libraryNodeURL = libraryNodeURL + "/" + value;
+                    $('#breadcrumbSite').append('<li class="ms-Breadcrumb-listItem"><a class="ms-Breadcrumb-itemLink" href="' + libraryNodeURL + '">' + value + '</a><i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i></li>');
+
                 }
+                
+
             });
         }
     }
@@ -156,9 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		    li.innerHTML = '<a class="ms-Breadcrumb-itemLink" href="' + currentWeb.get_url() + '">' + currentWeb.get_title() + '</a><i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight"></i>'
 		    if (Custombreadcrumb != null) {
 		        breadCrumbNode.insertBefore(li, breadCrumbNode.childNodes[0]);
-		        if (breadcrumbProperties.showListTitle) {
-		            getListTitle();
-		        }
+		        getListTitle();//only supported on sharepoint online
 		        if (breadcrumbProperties.showFolders) {
 		            getFolders();
 		        }
