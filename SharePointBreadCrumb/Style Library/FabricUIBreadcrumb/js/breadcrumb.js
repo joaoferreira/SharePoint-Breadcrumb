@@ -15,14 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    //Get script location to inject the css file
+
+//Get script location to inject the css file
     var scripts = document.getElementsByTagName("script");
     var pathBreadCrumb = "";
     if (scripts && scripts.length > 0) {
         for (var i in scripts) {
-            if (scripts[i].src && scripts[i].src.match(/breadcrumb\.js$/)) {
-                pathBreadCrumb = scripts[i].src.replace(/(.*)breadcrumb\.js$/, "$1");
-                pathBreadCrumb = pathBreadCrumb.replace("/js/", "/");
+            if (scripts[i].src && scripts[i].src.match(/\/js\/breadcrumb\.js/)) {
+				pathBreadCrumb = scripts[i].src.replace(/(.*)\/js\/breadcrumb\.js.*/,"$1/");
                 break;
             }
         }
